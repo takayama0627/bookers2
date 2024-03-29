@@ -1,0 +1,25 @@
+<div class="container">
+<div class="row justify-content-center">
+<div class="col-lg-8">
+
+<h2>Editing Book</h2>
+<% if @book.errors.any? %>
+  <%= @book.errors.count %>errors prohibited this obj from being saved:
+    <ul>
+      <% @book.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
+  <%= form_with model: @book, url: update_book_path(@book.id), method: :patch do |f| %>
+    <P>Title</P>
+    <%= f.text_field :title %><br />
+    <P>Opinion</P>
+    <%= f.text_area :body %><br />
+    <%= f.submit 'Update Book', class: "btn btn-sm btn-success" %><br />
+  <% end %>
+  <%= link_to 'Show', book_path(@book) %>|<%= link_to 'Back', books_path %><br />
+
+</div>
+</div>
+</div>
