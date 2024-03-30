@@ -11,7 +11,7 @@
       <% end %>
     </ul>
   <% end %>
-  <%= form_with model: @book, url: update_book_path(@book.id), method: :patch do |f| %>
+  <%= form_with model: @book do |f| %>
     <P>Title</P>
     <%= f.text_field :title %><br />
     <P>Opinion</P>

@@ -7,8 +7,8 @@ Rails.application.routes.draw do
 
   resources :users
 
-  get "/top", to: "homes#top", as: "top"
-  get '/about', to: 'homes#about', as: 'about'
+  root to: "homes#top", as: "top"
+  get 'home/about', to: 'homes#about', as: 'about'
   post 'books' => 'books#create'
   patch 'books/:id/update' => 'books#update', as: 'update_book'
   delete 'books/:id' => 'books#destroy', as: 'destroy_book'
